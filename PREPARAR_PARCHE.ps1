@@ -45,6 +45,7 @@ $patchName = "patch-$From-$To.zip"
 $patchPath = Join-Path $OutputDirectory $patchName
 if (Test-Path -LiteralPath $patchPath) { throw "Ya existe $patchPath. Usa otra carpeta de salida." }
 Add-Type -AssemblyName System.IO.Compression
+Add-Type -AssemblyName System.IO.Compression.FileSystem
 $archive = [IO.Compression.ZipFile]::Open($patchPath, [IO.Compression.ZipArchiveMode]::Create)
 try {
     $description = [ordered]@{ schema = 1; from = $From; to = $To; delete = @($Delete) }
