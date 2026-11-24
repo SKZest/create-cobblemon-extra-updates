@@ -91,6 +91,7 @@ try {
     }
 
     Add-Type -AssemblyName System.IO.Compression
+    Add-Type -AssemblyName System.IO.Compression.FileSystem
     while ($current -lt $latest) {
         $patch = @($manifest.patches | Where-Object { [int]$_.from -eq $current }) | Select-Object -First 1
         if (-not $patch) { throw "Falta el parche que comienza en la version $current." }
