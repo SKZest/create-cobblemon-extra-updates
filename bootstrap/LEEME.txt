@@ -1,0 +1,11 @@
+ACTIVAR ACTUALIZACIONES AUTOMATICAS
+
+1. Cierra Minecraft.
+2. Extrae TODO este ZIP dentro de la carpeta portatil que contiene
+   INICIAR_MODPACK.bat.
+3. Ejecuta ACTIVAR_ACTUALIZACIONES.bat una sola vez.
+4. A partir de entonces, abre el juego con INICIAR_MODPACK.bat.
+
+Incluye las correcciones visuales de Journey Mounts y Mega Sceptile.
+No cambia mundos, mapas ni preferencias personales.
+
