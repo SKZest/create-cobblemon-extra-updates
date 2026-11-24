@@ -7,12 +7,13 @@ el manifiesto y los parches cuya distribución esté permitida.
 ## Estado inicial
 
 - Repositorio previsto: `SKZest/create-cobblemon-extra-updates`, público.
-- Primera versión: `v1`, con `updates.json` y sin parche. El ZIP portátil
-  `AUTOUPDATE_2026-11-23` ya representa esa versión.
+- `v1`: base del ZIP portátil `AUTOUPDATE_2026-11-23`.
+- `v2`: parche de prueba que añade un archivo informativo y comprueba la
+  descarga automática. No modifica partidas ni mods.
 - Dirección estable que consulta el lanzador:
   `https://github.com/SKZest/create-cobblemon-extra-updates/releases/latest/download/updates.json`
-- Los amigos con copias anteriores reciben una instalación única del
-  actualizador y deben partir de la corrección visual más reciente.
+- Los amigos con copias anteriores reciben una instalación única que añade el
+  actualizador y las correcciones visuales.
 
 ## Publicar una actualización
 
@@ -22,23 +23,24 @@ el manifiesto y los parches cuya distribución esté permitida.
    los nombres de los mods viejos que deben eliminarse. La carpeta fuente debe
    contener exactamente los archivos que se distribuirán.
 3. Probar el parche en una copia del portátil y comprobar que el juego abre.
-4. Crear una versión estable de GitHub con etiqueta `v2`, `v3`, etc. y adjuntar
-   `patch-1-2.zip` y `updates.json` generados. Cada nueva versión adjunta un
+4. Crear una versión estable de GitHub con etiqueta `v3`, `v4`, etc. y adjuntar
+   el parche y `updates.json` generados. Cada nueva versión adjunta un
    `updates.json` con la lista acumulada de parches.
 5. Los amigos recibirán la actualización al abrir el `.bat`.
 
-Ejemplo de creación de `v2`:
+Ejemplo de creación de `v3`:
 
 ```powershell
 & .\PREPARAR_PARCHE.ps1 `
   -PortableRoot 'C:\ruta\Create_Cobblemon_Extra_Portatil' `
-  -From 1 -To 2 `
+  -From 2 -To 3 `
   -Files @('.minecraft/global_packs/required_resources/traduccion_es_es/pack.mcmeta') `
-  -PreviousManifest '.\updates-inicial.json' `
-  -OutputDirectory '.\salida-v2'
+  -PreviousManifest '.\salida\v2\updates.json' `
+  -OutputDirectory '.\salida-v3'
 ```
 
-Para `v3`, usar el `updates.json` de `v2` como `PreviousManifest`.
+Para versiones posteriores, usar el `updates.json` de la versión anterior
+como `PreviousManifest`.
 
 ## Archivos protegidos
 
